@@ -1,0 +1,37 @@
+###
+
+GET http://localhost:9000/api
+
+###
+
+GET http://localhost:9000/api/menu
+
+
+###
+
+POST http://localhost:9000/api/menu
+Content-Type: application/json
+
+{
+    "menuName":"asdasd",
+    "link":"/asdd"
+}
+
+
+### 
+DELETE http://localhost:9000/api/menu/2f787fbc-c326-4ae5-9d32-4baec1aeb2ad
+
+
+
+
+###
+
+PUT  http://localhost:9000/api/menu
+Content-Type: application/json 
+
+{
+    "id": "18b4f2e3-8957-4d1d-839b-84044cdf112e",
+    "menuName":"Getstart",
+    "link":"/asasf"
+}
+

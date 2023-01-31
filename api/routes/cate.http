@@ -1,0 +1,27 @@
+###
+
+GET http://localhost:9000/api/cate
+
+###
+
+POST http://localhost:9000/api/cate
+Content-Type: application/json
+
+{
+    "cateName" : "Huwtsas"
+}
+
+
+###
+
+DELETE http://localhost:9000/api/cate/8bb91107-0f70-473a-af04-87baf39b94d8
+
+###
+
+PUT http://localhost:9000/api/cate
+Content-Type: application/json 
+
+{
+    "id":"533e5113-5533-454c-9c81-b8d6e8495fb9",
+    "cateName" : "Tsamts"
+}
