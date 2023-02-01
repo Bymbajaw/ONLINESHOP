@@ -22,6 +22,6 @@ PUT http://localhost:9000/api/cate
 Content-Type: application/json 
 
 {
-    "id":"533e5113-5533-454c-9c81-b8d6e8495fb9",
-    "cateName" : "Tsamts"
+    "id":"6864627a-c016-4d79-9d96-4a2ae8b3b1ba",
+    "cateName" : "Mongol Deel"
 }
