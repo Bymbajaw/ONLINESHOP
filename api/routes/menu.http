@@ -31,7 +31,7 @@ Content-Type: application/json
 
 {
     "id": "18b4f2e3-8957-4d1d-839b-84044cdf112e",
-    "menuName":"Getstart",
-    "link":"/asasf"
+    "menuName":"Sign in",
+    "link":"/signin"
 }
 
