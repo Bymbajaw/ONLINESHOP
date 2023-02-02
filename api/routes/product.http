@@ -1,0 +1,31 @@
+###
+
+GET http://localhost:9000/api/product
+
+###
+
+POST http://localhost:9000/api/product
+Content-Type: application/json
+
+{
+    "title" : "Hoodie",
+    "description" : "Super Grey",
+    "price" : "300,000₮",
+    "rating":"6.99",
+    "brand":"Bebe",
+    "category": "Hoodie",
+    "image":"https://images.unsplash.com/photo-1601063476271-a159c71ab0b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvb2RpZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+}
+
+###
+
+DELETE http://localhost:9000/api/product/5b51c517-3191-4be3-b22b-e09e10e3cbfc
+
+###
+
+PUT http://localhost:9000/api/product
+Content-Type: application/json 
+
+{
+
+}
