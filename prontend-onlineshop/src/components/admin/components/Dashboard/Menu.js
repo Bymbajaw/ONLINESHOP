@@ -32,31 +32,42 @@ export default function Menu() {
 
   return (
     <div>
+      <div className="">
+        {menus.map(({ menuName }, i) => {
+          return (
+            <div key={i} className="btn btn-light">
+              <p className="">{menuName}</p>
+            </div>
+          );
+        })}
+      </div>
+      <hr />
       <div className="row ">
         <thead>
-          <th></th>
-          <th></th>
-          <th></th>
+          <a href="/admin/addmenu">
+            <div className="btn btn-danger">Add Menu</div>
+          </a>
         </thead>
-        <tbody>
-          {menus.map(({ id, menuName }, i) => {
+        <tbody className="">
+          {menus.map(({ id, menuName, link }, i) => {
             return (
-              <tr key={i} className="row">
-                <td className="col-6">{menuName}</td>
+              <tr key={i} className="row mt-3">
+                <td className="col-3">{menuName}</td>
+                <td className="col-3">{link}</td>
                 <td className="col-4 ">
                   <div className="justify-content-between d-flex">
-                  <button
-                    className="btn btn-warning col-6"
-                    // onClick={() => onEdit(id)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="btn btn-primary col-4"
-                    onClick={() => onDelete(id)}
-                  >
-                    Delete
-                  </button>
+                    <button
+                      className="btn btn-warning col-6"
+                      // onClick={() => onEdit(id)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="btn btn-primary col-4"
+                      onClick={() => onDelete(id)}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </td>
               </tr>

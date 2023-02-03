@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 
 export default function Admin() {
   const navigate = useNavigate();
+
+  const [menus, setMenus] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = () => {
+    fetch("http://localhost:9000/api/menu")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMenus(data.result);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -36,6 +52,13 @@ export default function Admin() {
         <div className="row">
           <div className="col-md-2">
             <div className="list-group">
+              {/* {menus.map(({ menuName }, i) => {
+                return (
+                  <div key={i} className="btn btn-light">
+                    <p className="">{menuName}</p>
+                  </div>
+                );
+              })} */}
               <div className="list-group-item">
                 <a href="/admin/dashboard">Dashboard</a>
               </div>

@@ -3,6 +3,7 @@ import "./App.css";
 import Admin from "./components/admin/Admin";
 import Apps from "./components/admin/components/Applications/Apps";
 import Documentation from "./components/admin/components/Applications/Documentation";
+import AddMenu from "./components/admin/components/Dashboard/AddMenu";
 import Dashboard from "./components/admin/components/Dashboard/Dashboard";
 import Menu from "./components/admin/components/Dashboard/Menu";
 import Charts from "./components/admin/components/Data/Charts";
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/admin/*" element={<Admin />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="menu" element={<Menu />} />
+            <Route path="addmenu" element={<AddMenu />} />
             <Route path="uielements" element={<UIElements />} />
             <Route path="advencedui" element={<AdvancedUI />} />
             <Route path="formelements" element={<FormElements />} />

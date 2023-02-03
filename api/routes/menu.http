@@ -13,8 +13,8 @@ POST http://localhost:9000/api/menu
 Content-Type: application/json
 
 {
-    "menuName":"asdasd",
-    "link":"/asdd"
+    "menuName":"Zasah",
+    "link":"/zasah"
 }
 
 
