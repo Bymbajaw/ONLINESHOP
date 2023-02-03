@@ -30,13 +30,26 @@ export default function Menu() {
       .catch((err) => console.log(err));
   };
 
+  const onEdit = (id) => {
+    fetch(`http://localhost:9000/api/menu`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        getData();
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
       <div className="">
         {menus.map(({ menuName }, i) => {
           return (
             <div key={i} className="btn btn-light">
-              <p className="">{menuName}</p>
+              <p>{menuName}</p>
             </div>
           );
         })}
@@ -56,12 +69,13 @@ export default function Menu() {
                 <td className="col-3">{link}</td>
                 <td className="col-4 ">
                   <div className="justify-content-between d-flex">
-                    <button
+                    <a
+                      href={`/admin/editmenu/${id}`}
                       className="btn btn-warning col-6"
-                      // onClick={() => onEdit(id)}
+                      onClick={() => onEdit(id)}
                     >
                       Edit
-                    </button>
+                    </a>
                     <button
                       className="btn btn-primary col-4"
                       onClick={() => onDelete(id)}

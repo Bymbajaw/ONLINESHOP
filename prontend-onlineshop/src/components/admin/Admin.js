@@ -80,6 +80,9 @@ export default function Admin() {
               <div className="list-group-item">
                 <a href="/admin/notification">Notification</a>
               </div>
+              {/* <div className="list-group-item">
+                <a href="/admin/product">Product</a>
+              </div> */}
               <div className="list-group-item">
                 <a href="/admin/charts">Charts</a>
               </div>
