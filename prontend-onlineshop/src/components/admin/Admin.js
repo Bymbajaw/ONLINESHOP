@@ -52,18 +52,14 @@ export default function Admin() {
         <div className="row">
           <div className="col-md-2">
             <div className="list-group">
-              {/* {menus.map(({ menuName }, i) => {
-                return (
-                  <div key={i} className="btn btn-light">
-                    <p className="">{menuName}</p>
-                  </div>
-                );
-              })} */}
               <div className="list-group-item">
                 <a href="/admin/dashboard">Dashboard</a>
               </div>
               <div className="list-group-item">
                 <a href="/admin/menu">Menu</a>
+              </div>
+              <div className="list-group-item">
+                <a href="/admin/products">Products</a>
               </div>
               <div className="list-group-item">
                 <a href="/admin/uielements">UI Elements</a>

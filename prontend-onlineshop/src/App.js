@@ -7,7 +7,6 @@ import AddMenu from "./components/admin/components/Dashboard/AddMenu";
 import Dashboard from "./components/admin/components/Dashboard/Dashboard";
 import EditMenu from "./components/admin/components/Dashboard/EditMenu";
 import Menu from "./components/admin/components/Dashboard/Menu";
-// import Product from "./components/admin/components/Dashboard/product";
 import Charts from "./components/admin/components/Data/Charts";
 import Maps from "./components/admin/components/Data/Maps";
 import Tables from "./components/admin/components/Data/Tables";
@@ -18,6 +17,8 @@ import ECommerce from "./components/admin/components/Pages/ECommerce";
 import ErrorPages from "./components/admin/components/Pages/ErrorPages";
 import GeneralPages from "./components/admin/components/Pages/GeneralPages";
 import UserPages from "./components/admin/components/Pages/UserPages";
+import Addproducts from "./components/admin/components/Products/Addproduct";
+import Products from "./components/admin/components/Products/Products";
 import AdvancedUI from "./components/admin/components/UI Elements/AdvancedUI";
 import UIElements from "./components/admin/components/UI Elements/UIElements";
 import Login from "./components/admin/Login";
@@ -36,7 +37,8 @@ function App() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="menu" element={<Menu />} />
             <Route path="addmenu" element={<AddMenu />} />
-            {/* <Route path="product" element={<Product />} /> */}
+            <Route path="products" element={<Products />} />
+            <Route path="addproduct" element={<Addproducts />} />
             <Route path="editmenu/:id" element={<EditMenu />} />
             <Route path="uielements" element={<UIElements />} />
             <Route path="advencedui" element={<AdvancedUI />} />
