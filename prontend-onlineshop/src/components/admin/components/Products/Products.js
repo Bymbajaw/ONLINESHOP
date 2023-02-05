@@ -57,7 +57,6 @@ export default function Products() {
                     <td>{title}</td>
                     <td>{description}</td>
                     <td>{price}</td>
-                    <td>{image}</td>
                     <td>{brand}</td>
                     <td>
                       <button

@@ -31,41 +31,47 @@ export default function AddMenu() {
       })
       .catch((err) => console.log(err));
   };
+  const butsah = () => {
+    navigate("/admin/menu");
+  };
 
   return (
     <div>
-      <div className="row">
-        <div className="col-md-4 ">
-          <form>
-            <span onClick={() => setModal(modal + 1)}>Add Menu</span>
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="menuName"
-                value={menu.menuName}
-                onChange={(e) => {
-                  setMenu({ ...menu, menuName: e.target.value });
-                }}
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="link"
-                value={menu.link}
-                onChange={(e) => {
-                  setMenu({ ...menu, link: e.target.value });
-                }}
-              />
-            </div>
-            <button className="btn btn-primary" onClick={onSave}>
-              Save
-            </button>
-          </form>
-        </div>
+      <div>
+        <h4>Add Menu</h4>
       </div>
+      <form>
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="menuName"
+            value={menu.menuName}
+            onChange={(e) => {
+              setMenu({ ...menu, menuName: e.target.value });
+            }}
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="link"
+            value={menu.link}
+            onChange={(e) => {
+              setMenu({ ...menu, link: e.target.value });
+            }}
+          />
+        </div>
+        <div className="row gap-3">
+          <button className="btn btn-primary col-1" onClick={onSave}>
+            Save
+          </button>
+          <button className="btn btn-primary col-1" onClick={butsah}>
+            Буцах
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
