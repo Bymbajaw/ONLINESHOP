@@ -11,6 +11,7 @@ export default function Addproducts() {
     price: 0,
     brand: "",
     image: [],
+    thumbImage: [],
   };
 
   const [productItem, setProductItem] = useState(init);
@@ -38,6 +39,44 @@ export default function Addproducts() {
 
   const butsah = () => {
     navigate("/admin/products");
+  };
+
+  const sendFile = async (fieldName, files) => {
+    // setLoading(true);
+    console.log(files);
+
+    const url = "https://api.cloudinary.com/v1_1/dqnmsk4qx/upload";
+
+    const newArr = [];
+    for (let i = 0; i < files[0].length; i++) {
+      newArr.push(files[0][i]);
+    }
+    const promise = await Promise.all(
+      newArr.map((file) => {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("api_key", "677539896739988");
+        formData.append("folder", "shop");
+        formData.append("upload_preset", "c4o6fxma");
+
+        return axios.post(url, formData);
+      })
+    );
+    console.log(promise);
+
+    const arr = [];
+
+    promise.map((res) => {
+      arr.push(res.data.secure_url);
+    });
+
+    if (fieldName == "image") {
+      setProductItem({ ...productItem, image: arr });
+    } else {
+      setProductItem({ ...productItem, thumbImage: arr[0] });
+    }
+
+    // setLoading(false);
   };
 
   return (
@@ -115,33 +154,55 @@ export default function Addproducts() {
           <input
             className="form-control"
             onChange={(e) => {
-              const url = "https://api.cloudinary.com/v1_1/dqnmsk4qx/upload";
-               
-              
+              console.log(e.target.files);
 
+              const arr = [];
 
-              const formData = new FormData();
+              arr.push(e.target.files);
+              sendFile("thumbImage", arr);
+            }}
+            type="file"
+            // onChange={(e) => {
+            //   const url = "https://api.cloudinary.com/v1_1/dqnmsk4qx/upload";
 
-              let file = e.target.files[0];
+            //   const formData = new FormData();
 
-              formData.append("file", file);
-              formData.append("api_key", "677539896739988");
-              formData.append("folder", "shop");
-              formData.append("upload_preset", "c4o6fxma");
+            //   let file = e.target.files[0];
 
-              axios
-                .post(url, formData)
-                .then((res) => {
-                  console.log(res);
+            //   formData.append("file", file);
+            //   formData.append("api_key", "677539896739988");
+            //   formData.append("folder", "shop");
+            //   formData.append("upload_preset", "c4o6fxma");
 
-                  setProductItem({
-                    ...productItem,
-                    image: res.data.secure_url,
-                  });
-                })
-                .catch((err) => {
-                  console.log(err);
-                });
+            //   axios
+            //     .post(url, formData)
+            //     .then((res) => {
+            //       console.log(res);
+
+            //       setProductItem({
+            //         ...productItem,
+            //         image: res.data.secure_url,
+            //       });
+            //     })
+            //     .catch((err) => {
+            //       console.log(err);
+            //     });
+            // }}
+            // type="file"
+            // multiple
+          />
+        </div>
+        <div className="mb-3">
+          <label>Slide Images</label>
+          <input
+            className="form-control"
+            onChange={(e) => {
+              console.log(e.target.files);
+
+              const arr = [];
+
+              arr.push(e.target.files);
+              sendFile("images", arr);
             }}
             type="file"
             multiple

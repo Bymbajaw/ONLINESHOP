@@ -17,8 +17,16 @@ exports.getAll = (request, response) => {
 };
 
 exports.create = (request, response) => {
-  const { image, title, description, price, rating, brand, category } =
-    request.body;
+  const {
+    image,
+    title,
+    description,
+    price,
+    rating,
+    brand,
+    category,
+    thumbImage,
+  } = request.body;
   fs.readFile(productFile, "utf-8", (readErr, data) => {
     if (readErr) {
       return response.json({ status: false, message: readErr });
@@ -34,6 +42,7 @@ exports.create = (request, response) => {
       rating,
       brand,
       category,
+      thumbImage,
     };
 
     parsedData.push(newObj);
@@ -67,6 +76,7 @@ exports.update = (request, response) => {
           rating,
           brand,
           category,
+          thumbImage,
         };
       } else {
         return productObj;
