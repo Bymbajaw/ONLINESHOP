@@ -6,3 +6,20 @@ body{
 .container{
   max-width: 100%;
 }
+
+.images{
+  width: 50px;
+  object-fit: cover;
+}
+
+td{
+  line-height: 80px;
+}
+
+th{
+  padding-left:7px;
+}
+
+.table-responsive{
+  padding-top: 20px;
+}

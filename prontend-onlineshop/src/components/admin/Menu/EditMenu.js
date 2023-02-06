@@ -22,16 +22,18 @@ export default function AddMenu() {
         .then((res) => res.json())
         .then((res) => {
           console.log(res.result.filter((a)=> a.id ==  id));
-          setData(res.result.filter((a)=> a.id ==  id));
+          setData(res.result.filter((a)=> a.id ==  id)[0]);
         })
         .catch((err) => console.log(err));
     }, [])
 
 
   const onSave = (e) => {
-    e.preventDefault();
+      e.preventDefault();
+      
+      console.log(data);
 
-    fetch(`http://localhost:9000/api/menu`, {
+    fetch(`http://localhost:9000/api/menu/${data.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +55,7 @@ export default function AddMenu() {
         <div className="col-md-4 ">
           <form>
             <span onClick={() => setModal(modal + 1)}>Edit Menu</span>\
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <input
                 type="text"
                 className="form-control"
@@ -64,15 +66,15 @@ export default function AddMenu() {
                   setData({ ...data[0], id: e.target.value });
                 }}
               />
-            </div>
+            </div> */}
             <div className="mb-3">
               <input
                 type="text"
                 className="form-control"
                 placeholder="menuName"
-                value={data[0]?.menuName}
+                value={data.menuName}
                 onChange={(e) => {
-                  setData({ ...data[0], menuName: e.target.value });
+                  setData({ ...data, menuName: e.target.value });
                 }}
               />
             </div>
@@ -81,9 +83,9 @@ export default function AddMenu() {
                 type="text"
                 className="form-control"
                 placeholder="link"
-                value={data[0]?.link}
+                value={data.link}
                 onChange={(e) => {
-                  setData({ ...data[0], link: e.target.value });
+                  setData({ ...data, link: e.target.value });
                 }}
               />
             </div>

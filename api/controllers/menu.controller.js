@@ -38,7 +38,8 @@ exports.create = (request, response) => {
 };
 
 exports.update = (request, response) => {
-  const { id, menuName, link, position } = request.body;
+  const { id } = request.params;
+  const { menuName, link, position } = request.body;
   fs.readFile(dataFile, "utf-8", (readErr, data) => {
     if (readErr) {
       return response.json({ status: false, message: readErr });

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Products() {
   const [product, setProduct] = useState([]);
@@ -36,8 +35,8 @@ export default function Products() {
   };
 
   return (
-    <div className="">
-      <div className="row d-flex">
+    <div>
+      <div className="">
         <a href="/admin/addproduct">
           <div className="btn btn-primary mt-3">Add Product</div>
         </a>
@@ -45,15 +44,18 @@ export default function Products() {
       <div className="table-responsive">
         <table className="table">
           <thead>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>IMG</th>
+            <th>CLOTHES</th>
+            <th>DESCRIPTION</th>
+            <th>PRICE</th>
+            <th>BRAND</th>
           </thead>
           <tbody>
             {product.map(
               ({ id, title, description, price, image, brand }, i) => {
                 return (
                   <tr key={i}>
+                    <td>{<img src={image} className="images"></img>}</td>
                     <td>{title}</td>
                     <td>{description}</td>
                     <td>{price}</td>

@@ -62,49 +62,7 @@ export default function Admin() {
                 <a href="/admin/products">Products</a>
               </div>
               <div className="list-group-item">
-                <a href="/admin/uielements">UI Elements</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/advencedui">Advenced UI</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/formelements">Form elements</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/popups">Popups</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/notification">Notification</a>
-              </div>
-              {/* <div className="list-group-item">
-                <a href="/admin/product">Product</a>
-              </div> */}
-              <div className="list-group-item">
-                <a href="/admin/charts">Charts</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/tables">Tables</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/maps">Maps</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/userpages">User Pages</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/errorpages">Error Pages</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/generalpages">General Pages</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/ecommerce">E-commerce</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/apps">Apps</a>
-              </div>
-              <div className="list-group-item">
-                <a href="/admin/documentation">Documentation</a>
+                <a href="/admin/category">Category</a>
               </div>
             </div>
           </div>

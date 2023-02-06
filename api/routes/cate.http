@@ -8,7 +8,7 @@ POST http://localhost:9000/api/cate
 Content-Type: application/json
 
 {
-    "cateName" : "Huwtsas"
+    "cateName" : "Hat"
 }
 
 
@@ -23,5 +23,5 @@ Content-Type: application/json
 
 {
     "id":"6864627a-c016-4d79-9d96-4a2ae8b3b1ba",
-    "cateName" : "Mongol Deel"
+    "cateName" : "Hoodie"
 }

@@ -55,39 +55,45 @@ export default function Menu() {
         })}
       </div>
       <hr />
-      <div className="row ">
-        <thead>
-          <a href="/admin/addmenu">
-            <div className="btn btn-danger">Add Menu</div>
-          </a>
-        </thead>
-        <tbody className="">
-          {menus.map(({ id, menuName, link }, i) => {
-            return (
-              <tr key={i} className="row mt-3">
-                <td className="col-3">{menuName}</td>
-                <td className="col-3">{link}</td>
-                <td className="col-4 ">
-                  <div className="justify-content-between d-flex">
-                    <a
-                      href={`/admin/editmenu/${id}`}
-                      className="btn btn-warning col-6"
-                      onClick={() => onEdit(id)}
-                    >
-                      Edit
-                    </a>
-                    <button
-                      className="btn btn-primary col-4"
-                      onClick={() => onDelete(id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
+      <div className="">
+        <a href="/admin/addmenu">
+          <div className="btn btn-primary">Add Menu</div>
+        </a>
+        <div className="table-responsive">
+          <table className="table">
+            <thead>
+              <th>MenuName</th>
+              <th>Link</th>
+            </thead>
+            <tbody className="">
+              {menus.map(({ id, menuName, link }, i) => {
+                return (
+                  <tr key={i} className="">
+                    <td>{menuName}</td>
+                    <td>{link}</td>
+                    <td>
+                      <a
+                        href={`/admin/editmenu/${id}`}
+                        className="btn btn-warning "
+                        onClick={() => onEdit(id)}
+                      >
+                        Edit
+                      </a>
+                    </td>
+                    <td>
+                      <button
+                        className="btn btn-danger "
+                        onClick={() => onDelete(id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>  
+        </div>
       </div>
     </div>
   );
