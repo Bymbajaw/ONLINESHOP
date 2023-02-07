@@ -18,10 +18,6 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Main />} />
-
-
-
-        
         </Routes>
         <Routes>
           <Route path="/login" element={<Login />} />
