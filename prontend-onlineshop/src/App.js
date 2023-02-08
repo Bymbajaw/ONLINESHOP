@@ -9,8 +9,12 @@ import AddCate from "./components/admin/Category/AddCate";
 import Addproducts from "./components/admin/Products/Addproduct";
 import Products from "./components/admin/Products/Products";
 import Login from "./components/admin/Login";
-import Main from "./components/Main";
+import Main from "./Layouts/Main";
 import Category from "./components/admin/Category/Category";
+import Product from "./Layouts/Product";
+import Article from "./Layouts/Article";
+import Services from "./Layouts/Services";
+import Aboutus from "./Layouts/Aboutus";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/article" element={<Article />} />
+          <Route path="/aboutus" element={<Aboutus />} />
         </Routes>
         <Routes>
           <Route path="/login" element={<Login />} />
