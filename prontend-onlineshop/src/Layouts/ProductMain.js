@@ -37,9 +37,9 @@ export default function ProductMain() {
           alt=""
         />
       </div>
-      <div className="d-flex" style={{ margin: "15px" }}>
+      <div className="d-flex search-input" style={{ margin: "15px" }}>
         <div
-          className="flex flex-row p-2"
+          className="flex flex-row p-2 m-auto"
           style={{ backgroundColor: "#f4f4f4" }}
         >
           <input
@@ -50,22 +50,20 @@ export default function ProductMain() {
           <button>Find Now</button>
           <button>Filter</button>
         </div>
-          </div>
-          <div className="productList d-flex">
-          {product.map(
-              ({ id, title, description, price, image, brand }, i) => {
-                return (
-                  <div key={id} className="">
-                    <div>{<img src={image} className="images"></img>}</div>
-                    <div>{title}</div>
-                    <div>{description}</div>
-                    <div>{price}</div>
-                    <div>{brand}</div>
-                  </div>
-                );
-              }
-            )}
-          </div>
+      </div>
+      <div className="productList d-flex ">
+        {product.map(({ id, title, description, price, image, brand }, i) => {
+          return (
+            <div key={id} className="productList-bodyy col-4 mt-5">
+              <div className="productList-img ">{<img src={image}></img>}</div>
+              <div className="productList-title">{title}</div>
+              <div className="productList-desc">{description}</div>
+              <div className="productList-brand">{"Brand" + ": " + brand}</div>
+              <div className="productList-price">{price}</div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
