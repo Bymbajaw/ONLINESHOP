@@ -1,8 +1,18 @@
-import React from 'react'
-import Header from './Header'
+import React from "react";
+import { Footer } from "./Footer";
+import Header from "./Header";
+import ServicesMain from "./ServicesMain";
 
 export default function Services() {
   return (
-    <div><Header /></div>
-  )
+    <>
+      <header>
+        <Header />
+      </header>
+      <main><ServicesMain /></main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
+  );
 }

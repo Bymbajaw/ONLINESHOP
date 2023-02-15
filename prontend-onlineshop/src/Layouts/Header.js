@@ -1,7 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import LoginModal from "./LoginModal";
 
-export default function Header() {
+export default function Header(openModal, setUser, user, style, showModal) {
   const cates = [
     { id: 1, title: "Product", link: "product" },
     { id: 2, title: "Services", link: "services" },
@@ -13,30 +13,47 @@ export default function Header() {
     <div className="header">
       <div className="d-flex justify-content-between align-items-center">
         <Link to="/">
-          <img
-            width={110}
-            height={50}
-            className="img"
-            src={
-              "https://o.remove.bg/downloads/b6c6a7c8-c2ce-4a95-9595-1df9f7f06ae6/logo-removebg-preview.png"
-            }
-            alt="logo"
-          />
+          <img src={require("./img/logo-removebg-preview.png")} alt="google img"
+          width={110}
+          height={50}
+          className="img"/>
         </Link>
         <nav className="col-6">
           <ul className="d-flex align-items-center justify-content-between ">
             {cates.map((a, index) => {
               return (
-                <li>
-                  <a className="title text-decoration-none" onClick="active" href={a.link}>
-                    {a.title}
-                  </a>
+                // <li>
+                //   <a className="title text-decoration-none" href={a.link}>
+                //     {a.title}
+                //   </a>
+                // </li>
+                <li className="list-item" key={index}>
+                  {a.id == 4 ? (
+                    user ? (
+                      user
+                    ) : (
+                    <div></div>
+                    )
+                  ) : (
+                    <a className="title text-decoration-none" href={a.link}>
+                      {a.title}
+                    </a>
+                  )}
                 </li>
               );
             })}
+            <li className="list-item login">
+              <LoginModal />
+            </li>
+
+            {user && (
+              <button className="btn btn-warning" onClick={() => setUser("")}>
+                Log Out
+              </button>
+            )}
           </ul>
         </nav>
-        <span className="col-1 ">
+        {/* <span className="col-1 ">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +86,7 @@ export default function Header() {
               />
             </svg>
           </span>
-        </span>
+        </span> */}
       </div>
     </div>
   );

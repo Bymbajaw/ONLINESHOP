@@ -1,1 +1,5 @@
-[{"id":"34abfe0f-71b0-472d-8581-a5711e108639","cateName":"Hoodie"},{"id":"96e7ed49-ebd7-48e5-8710-4987cf0ce46b","cateName":"Shoes"},{"id":"14e0bb64-fa9d-4762-a710-dd35b06a9606","cateName":"Hat"}]
+[
+  { "id": "34abfe0f-71b0-472d-8581-a5711e108639", "cateName": "Hoodie" },
+  { "id": "96e7ed49-ebd7-48e5-8710-4987cf0ce46b", "cateName": "Shoes" },
+  { "id": "14e0bb64-fa9d-4762-a710-dd35b06a9606", "cateName": "Hat" }
+]

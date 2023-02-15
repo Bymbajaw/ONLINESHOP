@@ -40,6 +40,7 @@ export default function Admin() {
                 <span
                   className="text-light"
                   onClick={() => {
+                    localStorage.clear();
                     navigate("/login");
                   }}
                 >
