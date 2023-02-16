@@ -8,7 +8,7 @@ import Menu from "./components/admin/Menu/Menu";
 import AddCate from "./components/admin/Category/AddCate";
 import Addproducts from "./components/admin/Products/Addproduct";
 import Products from "./components/admin/Products/Products";
-import Login from "./components/admin/Login";
+import AdminLogin from "./components/admin/AdminLogin";
 import Main from "./Layouts/Main";
 import Category from "./components/admin/Category/Category";
 import Product from "./Layouts/Product";
@@ -21,14 +21,15 @@ function App() {
     <div className="container">
       <div>
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/article" element={<Article />} />
-          <Route path="/aboutus" element={<Aboutus />} />
-        </Routes>
-        <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Main />}>
+            <Route path="/product" element={<Product />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/article" element={<Article />} />
+            <Route path="/aboutus" element={<Aboutus />} />
+          </Route>
+          {/* </Routes>
+        <Routes> */}
+          <Route path="/login" element={<AdminLogin />} />
           <Route exact path="/admin/*" element={<Admin />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="menu" element={<Menu />} />

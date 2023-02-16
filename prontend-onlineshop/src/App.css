@@ -31,7 +31,7 @@ li{
   
 }
 
-header{
+.header{
   background-color: #FFDB89;
 }
 
@@ -159,7 +159,7 @@ header{
 .services-list{
   
 }
-
+/* 
 body.active-modal{
   overflow-y: hidden;
 }
@@ -212,9 +212,22 @@ body.active-modal{
 
 .modal-content h2{
   padding-bottom: 80px;
+} */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(221 221 221 / 90%);
 }
 
-.btn{
+
+
+/* .btn{
   width: 212px;
   height: 41px;
   border-color: rgb(168, 168, 168);
@@ -311,7 +324,7 @@ margin-right: 10px;
 .table{
   text-align: start
 }
-
+ */
 
 
 footer{
@@ -341,4 +354,18 @@ footer{
 .footerCategorys{
   width: 100%;
   height: 210px;
+}
+
+
+.localname{
+  font-size: 20px;
+  
+}
+
+.login{
+  width: 40%;
+}
+
+.locallogout{
+  justify-content: space-between  ;
 }

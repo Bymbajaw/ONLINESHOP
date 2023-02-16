@@ -6,13 +6,9 @@ import ServicesMain from "./ServicesMain";
 export default function Services() {
   return (
     <>
-      <header>
-        <Header />
-      </header>
-      <main><ServicesMain /></main>
-      <footer>
-        <Footer />
-      </footer>
+      <main>
+        <ServicesMain />
+      </main>
     </>
   );
 }

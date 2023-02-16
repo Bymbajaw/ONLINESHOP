@@ -54,7 +54,7 @@ export default function ProductMain() {
       <div className="productList d-flex ">
         {product.map(({ id, title, description, price, image, brand }, i) => {
           return (
-            <div key={id} className="productList-bodyy col-4 mt-5">
+            <div key={i} className="productList-bodyy col-4 mt-5">
               <div className="productList-img ">{<img src={image}></img>}</div>
               <div className="productList-title">{title}</div>
               <div className="productList-desc">{description}</div>
