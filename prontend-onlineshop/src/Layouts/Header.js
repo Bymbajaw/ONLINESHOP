@@ -80,8 +80,10 @@ export default function Header(openModal, setUser, username) {
                         localStorage.removeItem("name");
                         navigate("/");
                       }}
-                    ></div>
-                    <button className="btn btn-danger ">Log Out</button>
+                    >
+                      {" "}
+                      <button className="btn btn-danger me-3">Log Out</button>
+                    </div>
                   </div>
                 ) : (
                   <Login setModal={setModal} modal={modal} />
