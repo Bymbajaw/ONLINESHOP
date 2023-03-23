@@ -49,12 +49,14 @@ export const Footer = () => {
         </div>
       </div>
       <div className="footerCategory ">
-        <div className="footerCategorys flex space-between d-flex">
+        <div className="footerCategorys justify-content-end flex space-between d-flex">
           {footerData.map((data, index) => (
-            <div className="ms-4 mt-4  align-start space-around "  key={index}>
+            <div className="ms-4 mt-4  align-start space-around " key={index}>
               <h2>{data.Title}</h2>
               {data.category.map((categorys, index) => (
-                <span key={index} className="d-flex">{categorys.name}</span>
+                <span key={index} className="d-flex">
+                  {categorys.name}
+                </span>
               ))}
             </div>
           ))}

@@ -81,7 +81,12 @@ export default function Header(openModal, setUser, username) {
                         navigate("/");
                       }}
                     >
+<<<<<<< HEAD
                       <button className="btn btn-danger me-3 ">Log Out</button>
+=======
+                      {" "}
+                      <button className="btn btn-danger me-3">Log Out</button>
+>>>>>>> 4a3c9a01b97c267a6be7b3b6465dd109b78408cd
                     </div>
                   </div>
                 ) : (
