@@ -8,7 +8,7 @@ POST http://localhost:9000/api/cate
 Content-Type: application/json
 
 {
-    "cateName" : "Hat"
+    "cateName" : "SHOES"
 }
 
 
